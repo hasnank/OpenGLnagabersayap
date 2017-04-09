@@ -12,8 +12,8 @@ public:
 	void Update();
 	bool IsClosed();
 private:
-	Display(const Display& other);
-	Display& operator=(const Display& other);
+	Display(const Display& other) {}
+	void operator=(const Display& other) {}
 
 	SDL_Window* m_window;
 	SDL_GLContext m_glContext;
