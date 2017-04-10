@@ -5,13 +5,15 @@
 
 class Vertex {
 public:
-	Vertex(const glm::vec3& pos) {
+	Vertex(const glm::vec3& pos, const glm::vec3& color) {
 		this->pos = pos;
+		this->color = color;
 	}
 
 protected:
 private:
 	glm::vec3 pos;
+	glm::vec3 color;
 };
 
 class Mesh
@@ -29,6 +31,7 @@ private:
 
 	enum {
 		POSITION_VB,
+		COLOR_VB,
 		NUM_BUFFERS
 	};
 
