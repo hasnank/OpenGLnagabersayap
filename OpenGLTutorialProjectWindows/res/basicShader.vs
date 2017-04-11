@@ -2,7 +2,7 @@
 
 
 attribute vec3 position;
-attribute vec3 color;
+in vec3 color;
 out vec3 dragonColor;
 
 void main(){

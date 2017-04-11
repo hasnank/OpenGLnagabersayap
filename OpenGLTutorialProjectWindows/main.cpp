@@ -13,14 +13,14 @@ int main(int argc, char** argv) {
 		Vertex(glm::vec3(0.5f, -0.5f, 0), glm::vec3(0, 0, 1.0f)),
 		Vertex(glm::vec3(0.5f, 0.5f, 0), glm::vec3(1.0f, 1.0f, 1.0f))
 
-		/*
-		Vertex(glm::vec3(-0.7f, -0.7f, 0)),
-		Vertex(glm::vec3(0.7f, -0.7f, 0)),
-		Vertex(glm::vec3(0.4f, -0.6f, 0)),
-		*/
+	};
+	GLuint elements[] = {
+		0, 1, 2,
+		1, 2, 3,
+		3, 0, 1
 	};
 
-	Mesh mesh(vertices, sizeof(vertices) / sizeof(vertices[0]));
+	Mesh mesh(vertices, sizeof(vertices) / sizeof(vertices[0]), elements, sizeof(elements) / sizeof(elements[0]));
 	Shader shader("./res/basicShader");
 
 	while (!display.IsClosed()) {

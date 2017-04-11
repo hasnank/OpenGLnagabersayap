@@ -19,7 +19,7 @@ private:
 class Mesh
 {
 public:
-	Mesh(Vertex* vertices, unsigned int numVertices);
+	Mesh(Vertex* vertices, unsigned int numVertices, GLuint* elements, unsigned int numIndices);
 	virtual ~Mesh();
 
 	void Draw();
@@ -31,7 +31,7 @@ private:
 
 	enum {
 		POSITION_VB,
-		COLOR_VB,
+		INDEX_VB,
 		NUM_BUFFERS
 	};
 
