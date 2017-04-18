@@ -63,8 +63,9 @@ private:
 		NUM_MODELS
 	};
 
-	GLuint m_vertexArrayObject[NUM_MODELS];
-	GLuint m_vertexArrayBuffer[NUM_MODELS][NUM_BUFFERS];
-	unsigned int m_drawCount[NUM_MODELS];
+	static const unsigned int NUM_LAYERS = 3;
+	GLuint m_vertexArrayObject[NUM_LAYERS][NUM_MODELS];
+	GLuint m_vertexArrayBuffer[NUM_LAYERS][NUM_MODELS][NUM_BUFFERS];
+	unsigned int m_drawCount[NUM_LAYERS][NUM_MODELS];
 };
 
