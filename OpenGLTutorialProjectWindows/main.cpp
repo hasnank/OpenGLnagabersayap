@@ -49,15 +49,24 @@ int main(int argc, char** argv) {
 		Vertex(glm::vec3(-0.262000f, 0.110000f, 0), glm::vec3(1.0f, 1.0f, 0.0f), 1),
 
 		//pohon
-		Vertex(glm::vec3(-0.1f, -0.5f, 0), glm::vec3(0.0f, 0.941406f, 0.0f), 2),
-		Vertex(glm::vec3(-0.5f, -0.5f, 0), glm::vec3(0.0f, 0.507812f, 0.0f), 2),
-		Vertex(glm::vec3(-0.3f, -0.1f, 0), glm::vec3(0.0f, 0.992188f, 0.0f), 2),
-		Vertex(glm::vec3(-0.1f, -0.2f, 0), glm::vec3(0.0f, 0.593750f, 0.0f), 2),
-		Vertex(glm::vec3(-0.5f, -0.2f, 0), glm::vec3(0.0f, 0.882812f, 0.0f), 2),
-		Vertex(glm::vec3(-0.3f, 0.2f, 0), glm::vec3(0.0f, 0.089844f, 0.0f), 2),
-		Vertex(glm::vec3(-0.1f, 0.1f, 0), glm::vec3(0.0f, 0.328125f, 0.0f), 2),
-		Vertex(glm::vec3(-0.5f, 0.1f, 0), glm::vec3(0.0f, 0.175781f, 0.0f), 2),
-		Vertex(glm::vec3(-0.3f, 0.4f, 0), glm::vec3(0.0f, 0.957031f, 0.0f), 2),
+		Vertex(glm::vec3(-0.5f, -0.7f, 0), glm::vec3(0.0f, 0.941406f, 0.0f), 2),
+		Vertex(glm::vec3(-0.9f, -0.7f, 0), glm::vec3(0.0f, 0.507812f, 0.0f), 2),
+		Vertex(glm::vec3(-0.7f, -0.3f, 0), glm::vec3(0.0f, 0.992188f, 0.0f), 2),
+		Vertex(glm::vec3(-0.5f, -0.5f, 0), glm::vec3(0.0f, 0.593750f, 0.0f), 2),
+		Vertex(glm::vec3(-0.9f, -0.5f, 0), glm::vec3(0.0f, 0.882812f, 0.0f), 2),
+		Vertex(glm::vec3(-0.7f, -0.1f, 0), glm::vec3(0.0f, 0.089844f, 0.0f), 2),
+		Vertex(glm::vec3(-0.5f, -0.3f, 0), glm::vec3(0.0f, 0.328125f, 0.0f), 2),
+		Vertex(glm::vec3(-0.9f, -0.3f, 0), glm::vec3(0.0f, 0.175781f, 0.0f), 2),
+		Vertex(glm::vec3(-0.7f, 0.1f, 0), glm::vec3(0.0f, 0.957031f, 0.0f), 2),
+		Vertex(glm::vec3(0.5f, -0.7f, 0), glm::vec3(0.0f, 0.941406f, 0.0f), 2),
+		Vertex(glm::vec3(0.9f, -0.7f, 0), glm::vec3(0.0f, 0.507812f, 0.0f), 2),
+		Vertex(glm::vec3(0.7f, -0.3f, 0), glm::vec3(0.0f, 0.992188f, 0.0f), 2),
+		Vertex(glm::vec3(0.5f, -0.5f, 0), glm::vec3(0.0f, 0.593750f, 0.0f), 2),
+		Vertex(glm::vec3(0.9f, -0.5f, 0), glm::vec3(0.0f, 0.882812f, 0.0f), 2),
+		Vertex(glm::vec3(0.7f, -0.1f, 0), glm::vec3(0.0f, 0.089844f, 0.0f), 2),
+		Vertex(glm::vec3(0.5f, -0.3f, 0), glm::vec3(0.0f, 0.328125f, 0.0f), 2),
+		Vertex(glm::vec3(0.9f, -0.3f, 0), glm::vec3(0.0f, 0.175781f, 0.0f), 2),
+		Vertex(glm::vec3(0.7f, 0.1f, 0), glm::vec3(0.0f, 0.957031f, 0.0f), 2),
 
 	};
 
@@ -79,6 +88,9 @@ int main(int argc, char** argv) {
 		22, 23, 24,
 		25, 26, 27,
 		28, 29, 30,
+		31, 32, 33,
+		34, 35, 36,
+		37, 38, 39,
 	};
 
 	Vertex quads[] = {
@@ -87,16 +99,21 @@ int main(int argc, char** argv) {
 		Vertex(glm::vec3(-1.0, 1.0, -1.0),  glm::vec3(0.5, 0.7, 1.0), 0),
 		Vertex(glm::vec3(1.0, 1.0, -1.0),  glm::vec3(0.5, 0.7, 1.0), 0),
 		Vertex(glm::vec3(1.0, -1.0, -1.0),  glm::vec3(0.8, 0.9, 1.0), 0),
-		Vertex(glm::vec3(-0.25, -1, 0), glm::vec3(0.5, 0.25, 0.0), 2),
-		Vertex(glm::vec3(-0.25, -0.5, 0),  glm::vec3(0.6, 0.3, 0.0), 2),
-		Vertex(glm::vec3(-0.35, -0.5, 0),  glm::vec3(0.6, 0.3, 0.0), 2),
-		Vertex(glm::vec3(-0.35, -1, 0),  glm::vec3(0.5, 0.25, 0.0), 2),
+		Vertex(glm::vec3(-0.65, -1, 0), glm::vec3(0.5, 0.25, 0.0), 2),
+		Vertex(glm::vec3(-0.65, -0.7, 0),  glm::vec3(0.6, 0.3, 0.0), 2),
+		Vertex(glm::vec3(-0.75, -0.7, 0),  glm::vec3(0.6, 0.3, 0.0), 2),
+		Vertex(glm::vec3(-0.75, -1, 0),  glm::vec3(0.5, 0.25, 0.0), 2),
+		Vertex(glm::vec3(0.65, -1, 0), glm::vec3(0.5, 0.25, 0.0), 2),
+		Vertex(glm::vec3(0.65, -0.7, 0),  glm::vec3(0.6, 0.3, 0.0), 2),
+		Vertex(glm::vec3(0.75, -0.7, 0),  glm::vec3(0.6, 0.3, 0.0), 2),
+		Vertex(glm::vec3(0.75, -1, 0),  glm::vec3(0.5, 0.25, 0.0), 2),
 		
 	};
 
 	GLuint quadsElmt[] = {
 		0, 1, 2, 3,
 		4, 5, 6, 7,
+		8, 9, 10, 11,
 	};
 
 	Circle circle[] = {
