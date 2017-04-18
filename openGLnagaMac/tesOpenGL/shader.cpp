@@ -110,4 +110,3 @@ static std::string LoadShader(const std::string& fileName) {
     return output;
 }
 
-
