@@ -81,6 +81,22 @@ int main(int argc, char** argv) {
         Vertex(glm::vec3(-0.112000f, 0.140000f, 0), glm::vec3(1.0f, 1.0f, 0.0f)),
     }
     
+    GLuint triangleElmt[] = {
+        0,1,2,
+        2,3,4,
+        4,5,6
+        6,7,8,
+        8,9,10,
+        10,11,12,
+        12,13,14,
+        14,15,16,
+        16,17,18,
+        18,19,20,
+        20,21,0
+        
+    };
+
+    
     
     
     Mesh mesh(triangles, sizeof(triangles) / sizeof(triangles[0]), triangleElmt, sizeof(triangleElmt) / sizeof(triangleElmt[0]), quads, sizeof(quads) / sizeof(quads[0]), quadsElmt, sizeof(quadsElmt) / sizeof(quadsElmt[0]), circle, sizeof(circle) / sizeof(circle[0]));
