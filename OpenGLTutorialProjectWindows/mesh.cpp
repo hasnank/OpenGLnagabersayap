@@ -5,7 +5,7 @@
 #include <vector>
 #include <map>
 
-void DrawCircle(float cx, float cy, float r, int num_segments);
+std::vector<glm::vec3> generateCircle(glm::vec3 center, float radius, unsigned int SEGMENTS);
 
 Mesh::Mesh(Vertex* triangle, unsigned int numTriangles,
 	GLuint* idxTri, unsigned int numIdxTri,
@@ -31,7 +31,7 @@ Mesh::Mesh(Vertex* triangle, unsigned int numTriangles,
 		m_drawCount[*quad[idxQuad[i]].GetLayer()][QUAD_IDX]++;
 
 	for (unsigned int i = 0; i < numCircles; ++i) // use Array!
-		m_drawCount[*circle[i].GetLayer()][CIRCLE_IDX]++;
+		m_drawCount[*circle[i].GetLayer()][CIRCLE_IDX] += (NUM_SEGMENTS + 1);
 
 	unsigned int m_vertexCount[NUM_LAYERS][NUM_MODELS];
 	for (unsigned int i = 0; i < NUM_LAYERS; ++i)
@@ -46,12 +46,12 @@ Mesh::Mesh(Vertex* triangle, unsigned int numTriangles,
 		m_vertexCount[*quad[i].GetLayer()][QUAD_IDX]++;
 
 	for (unsigned int i = 0; i < numCircles; ++i)
-		m_vertexCount[*circle[i].GetLayer()][CIRCLE_IDX]++;
+		m_vertexCount[*circle[i].GetLayer()][CIRCLE_IDX] += (NUM_SEGMENTS + 1);
 	
 	/* END OF COUNT INITIALIZATION */
 	
 	/* START OF DEBUG */
-	
+
 	/*
 	printf("VERTEX COUNT:\n");
 	for (unsigned int i = 0; i < NUM_LAYERS; ++i) {
@@ -69,6 +69,7 @@ Mesh::Mesh(Vertex* triangle, unsigned int numTriangles,
 		puts("");
 	}
 	*/
+
 	/* END OF DEBUG */
 	
 	for (unsigned int idx_layer = 0; idx_layer < NUM_LAYERS; ++idx_layer) {
@@ -81,15 +82,16 @@ Mesh::Mesh(Vertex* triangle, unsigned int numTriangles,
 			std::vector<glm::vec3> positions;
 			std::vector<glm::vec3> colors;
 			std::vector<GLuint> indices;
-			std::vector<float> radiuses;
 
-			positions.reserve(m_vertexCount[idx_layer][i]);
-			colors.reserve(m_vertexCount[idx_layer][i]);
-
-			if (i != CIRCLE_IDX)
+			if (i != CIRCLE_IDX) {
+				positions.reserve(m_vertexCount[idx_layer][i]);
+				colors.reserve(m_vertexCount[idx_layer][i]);
 				indices.reserve(m_drawCount[idx_layer][i]);
-			else
-				radiuses.reserve(m_vertexCount[idx_layer][i]);
+			} 
+			else {
+				positions.reserve(m_vertexCount[idx_layer][i] );
+				colors.reserve(m_vertexCount[idx_layer][i]);
+			}
 
 			std::map<unsigned int, unsigned int> globalToLocal; globalToLocal.clear();
 
@@ -146,9 +148,12 @@ Mesh::Mesh(Vertex* triangle, unsigned int numTriangles,
 					for (unsigned int j = 0, idxNow = 0; j < numCircles; ++j) {
 						if (*circle[j].GetLayer() == idx_layer) {
 							idxNow++;
-							positions.push_back(*circle[j].GetPos());
-							colors.push_back(*circle[j].GetColor());
-							radiuses.push_back(*circle[j].GetRadius());
+							
+							std::vector<glm::vec3> result = generateCircle(*circle[j].GetPos(), *circle[j].GetRadius(), NUM_SEGMENTS);
+							positions.insert(positions.end(), result.begin(), result.end());
+							
+							for(unsigned int k = 0;k <= NUM_SEGMENTS; ++k)
+								colors.push_back(*circle[j].GetColor());
 						}
 					}
 					assert(positions.size() == m_drawCount[idx_layer][i]);
@@ -175,10 +180,6 @@ Mesh::Mesh(Vertex* triangle, unsigned int numTriangles,
 				if (i != CIRCLE_IDX) {
 					glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_vertexArrayBuffer[idx_layer][i][INDEX_VB]);
 					glBufferData(GL_ELEMENT_ARRAY_BUFFER, m_drawCount[idx_layer][i] * sizeof(indices[0]), &indices[0], GL_STATIC_DRAW);
-				}
-				else {
-					glBindBuffer(GL_ARRAY_BUFFER, m_vertexArrayBuffer[idx_layer][i][INDEX_VB]); // should be RADIUS_VB
-					glBufferData(GL_ARRAY_BUFFER, m_drawCount[idx_layer][i] * sizeof(radiuses[0]), &radiuses[0], GL_STATIC_DRAW);
 				}
 			}
 			
@@ -212,46 +213,30 @@ void Mesh::Draw() {
 					break;
 
 				case CIRCLE_IDX:
+					if (m_drawCount[idx_layer][i] > 0)
+						glDrawArraysInstanced(GL_TRIANGLE_FAN, 0, NUM_SEGMENTS + 1, m_drawCount[idx_layer][i]);
 					break;
 				default:
 					break;
 			}
-			//glDrawArrays(GL_TRIANGLE_STRIP, 0, m_drawCount);
-
-			//printf("%d\n", m_drawCount);
-			//glDrawElements(GL_TRIANGLES, m_drawCount, GL_UNSIGNED_INT, 0);
-
 		}
 	}
 	glBindVertexArray(0); // unbind
-
-	//SECTION Septi
-
-	//SECTION Hishshah
-	
-	//SECTION Radit
-	
-	//SECTION Hasna
 }
 
-void DrawCircle(float cx, float cy, float r, int num_segments)
-{
-	float theta = 2 * 3.1415926 / float(num_segments);
-	float tangetial_factor = tanf(theta);//calculate the tangential factor 
+std::vector<glm::vec3> generateCircle(glm::vec3 center, float radius, unsigned int SEGMENTS) {
+	std::vector<glm::vec3> result;
+	result.push_back(center);
 
+	float theta = 2 * acos(-1) / (SEGMENTS - 1);
+	float tangetial_factor = tanf(theta);//calculate the tangential factor 
 	float radial_factor = cosf(theta);//calculate the radial factor 
 
-	float x = r;//we start at angle = 0 
-
+	float x = radius;
 	float y = 0;
 
-	glBegin(GL_LINE_LOOP);
-	for (int ii = 0; ii < num_segments; ii++)
-	{
-		glVertex2f(x + cx, y + cy);//output vertex 
-								   //calculate the tangential vector 
-								   //remember, the radial vector is (x, y) 
-								   //to get the tangential vector we flip those coordinates and negate one of them 
+	for (unsigned int i = 0; i < (SEGMENTS - 1); ++i) {
+		result.push_back(glm::vec3(x + center.x, y + center.y, 0));
 		float tx = -y;
 		float ty = x;
 
@@ -265,5 +250,7 @@ void DrawCircle(float cx, float cy, float r, int num_segments)
 		x *= radial_factor;
 		y *= radial_factor;
 	}
-	glEnd();
+
+	result.push_back(glm::vec3(radius + center.x, center.y, 0));
+	return result;
 }
