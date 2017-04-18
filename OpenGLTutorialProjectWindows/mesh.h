@@ -4,9 +4,20 @@
 #include <GL/glew.h>
 #include <GL/GL.h>
 
-class Vertex {
+class Layer {
 public:
-	Vertex(const glm::vec3& pos, const glm::vec3& color) {
+	Layer(int layer) {
+		this->layer = layer;
+	}
+	
+	inline int* GetLayer() { return &layer; }
+private:
+	int layer;
+};
+
+class Vertex : public Layer{
+public:
+	Vertex(const glm::vec3& pos, const glm::vec3& color, const int& layer) : Layer(layer){
 		this->pos = pos;
 		this->color = color;
 	}
@@ -22,7 +33,7 @@ private:
 
 class Circle : public Vertex {
 public:
-	Circle(const glm::vec3& pos, const glm::vec3& color, const float& radius) : Vertex(pos, color) {
+	Circle(const glm::vec3& pos, const glm::vec3& color, const float& radius, const int& layer) : Vertex(pos, color, layer) {
 		this->radius = radius;
 	}
 

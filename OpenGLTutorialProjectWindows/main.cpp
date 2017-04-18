@@ -43,7 +43,7 @@ int main(int argc, char** argv) {
 	};
 
 	Circle circle[] = {
-		Circle(glm::vec3(0.5, 0.5, 0), glm::vec3(0,0,0), 2)
+		Circle(glm::vec3(0.5, 0.5, 0), glm::vec3(0,0,0), 0.4, 2)
 	};
 
 	GLuint triangleElmt[] = {
@@ -58,7 +58,11 @@ int main(int argc, char** argv) {
 	};
 
 
-	Mesh mesh(triangles, sizeof(triangles) / sizeof(triangles[0]), triangleElmt, sizeof(triangleElmt) / sizeof(triangleElmt[0]), quads, sizeof(quads) / sizeof(quads[0]), quadsElmt, sizeof(quadsElmt) / sizeof(quadsElmt[0]), circle, sizeof(circle) / sizeof(circle[0]));
+	Mesh mesh(triangles, sizeof(triangles) / sizeof(triangles[0]), 
+		triangleElmt, sizeof(triangleElmt) / sizeof(triangleElmt[0]), 
+		quads, sizeof(quads) / sizeof(quads[0]), 
+		quadsElmt, sizeof(quadsElmt) / sizeof(quadsElmt[0]),
+ circle, sizeof(circle) / sizeof(circle[0]));
 
 
 	//    Mesh mesh(vertices, sizeof(vertices) / sizeof(vertices[0]));
