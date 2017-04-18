@@ -102,7 +102,7 @@ int main(int argc, char** argv) {
 
 	Circle circle[] = {
 		Circle(glm::vec3(0.5, 0.5, 0), glm::vec3(0,0,0), 0.4, 2),
-		Circle(glm::vec3(0, 0, 0), glm::vec3(1,1,0), 0.15, 0),
+		Circle(glm::vec3(0.031, 0, 0), glm::vec3(1,1,0), 0.1965, 0),
 	};
 
 	Mesh mesh(triangles, sizeof(triangles) / sizeof(triangles[0]), 
