@@ -1,0 +1,345 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1F0768FB1E9B68FF006A9A52 /* shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1F0768F91E9B68FF006A9A52 /* shader.cpp */; };
+		1F0768FE1E9B69BC006A9A52 /* mesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1F0768FC1E9B69BC006A9A52 /* mesh.cpp */; };
+		1F0769021E9B6D74006A9A52 /* display.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1F0769001E9B6D74006A9A52 /* display.cpp */; };
+		1F0769041E9B6F13006A9A52 /* main1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1F0769031E9B6F13006A9A52 /* main1.cpp */; };
+		1F0769061E9B78D6006A9A52 /* libSDL2-2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F0769051E9B78D6006A9A52 /* libSDL2-2.0.0.dylib */; };
+		1F0769081E9B7978006A9A52 /* include in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F0769071E9B7978006A9A52 /* include */; };
+		1F607E0A1E99F42C00578F77 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F607E091E99F42C00578F77 /* OpenGL.framework */; };
+		1F607E0F1E99F72100578F77 /* libGLEW.2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F607E0B1E99F55D00578F77 /* libGLEW.2.0.0.dylib */; };
+		1F607E101E99F72F00578F77 /* libglfw.3.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F607E0D1E99F57100578F77 /* libglfw.3.2.dylib */; };
+		1FA91D7B1E9C6F320075F15C /* basicShader.fs in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F07690D1E9B8150006A9A52 /* basicShader.fs */; };
+		1FA91D7C1E9C6F320075F15C /* basicShader.vs in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F07690E1E9B8172006A9A52 /* basicShader.vs */; };
+		1FEFA2641EA4C03300389A83 /* bricks.jpg in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FEFA2631EA4C02B00389A83 /* bricks.jpg */; };
+		1FEFA26C1EA4C35300389A83 /* stb_image.c in Sources */ = {isa = PBXBuildFile; fileRef = 1FEFA2681EA4C35300389A83 /* stb_image.c */; };
+		1FEFA26D1EA4C35300389A83 /* texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1FEFA26A1EA4C35300389A83 /* texture.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1F607DFD1E99EC3500578F77 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		1FA91D7A1E9C6F170075F15C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				1FEFA2641EA4C03300389A83 /* bricks.jpg in CopyFiles */,
+				1FA91D7B1E9C6F320075F15C /* basicShader.fs in CopyFiles */,
+				1FA91D7C1E9C6F320075F15C /* basicShader.vs in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1F0768F91E9B68FF006A9A52 /* shader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = shader.cpp; sourceTree = "<group>"; };
+		1F0768FA1E9B68FF006A9A52 /* shader.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = shader.hpp; sourceTree = "<group>"; };
+		1F0768FC1E9B69BC006A9A52 /* mesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mesh.cpp; sourceTree = "<group>"; };
+		1F0768FD1E9B69BC006A9A52 /* mesh.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = mesh.hpp; sourceTree = "<group>"; };
+		1F0769001E9B6D74006A9A52 /* display.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = display.cpp; sourceTree = "<group>"; };
+		1F0769011E9B6D74006A9A52 /* display.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = display.hpp; sourceTree = "<group>"; };
+		1F0769031E9B6F13006A9A52 /* main1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main1.cpp; sourceTree = "<group>"; };
+		1F0769051E9B78D6006A9A52 /* libSDL2-2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libSDL2-2.0.0.dylib"; path = "../../../../../../../../usr/local/Cellar/sdl2/2.0.5/lib/libSDL2-2.0.0.dylib"; sourceTree = "<group>"; };
+		1F0769071E9B7978006A9A52 /* include */ = {isa = PBXFileReference; lastKnownFileType = folder; name = include; path = ../../../../../../../../usr/local/Cellar/glm/0.9.8.3/include; sourceTree = "<group>"; };
+		1F07690A1E9B7ECD006A9A52 /* glmConfig.cmake */ = {isa = PBXFileReference; lastKnownFileType = text; name = glmConfig.cmake; path = ../../../../../../../../usr/local/Cellar/glm/0.9.8.3/lib/cmake/glm/glmConfig.cmake; sourceTree = "<group>"; };
+		1F07690D1E9B8150006A9A52 /* basicShader.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = basicShader.fs; sourceTree = "<group>"; };
+		1F07690E1E9B8172006A9A52 /* basicShader.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = basicShader.vs; sourceTree = "<group>"; };
+		1F607DFF1E99EC3500578F77 /* tesOpenGL */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = tesOpenGL; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F607E021E99EC3500578F77 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		1F607E091E99F42C00578F77 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		1F607E0B1E99F55D00578F77 /* libGLEW.2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.2.0.0.dylib; path = ../../../../../../../../usr/local/Cellar/glew/2.0.0/lib/libGLEW.2.0.0.dylib; sourceTree = "<group>"; };
+		1F607E0D1E99F57100578F77 /* libglfw.3.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.2.dylib; path = ../../../../../../../../usr/local/Cellar/glfw/3.2.1/lib/libglfw.3.2.dylib; sourceTree = "<group>"; };
+		1FEFA2631EA4C02B00389A83 /* bricks.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bricks.jpg; sourceTree = "<group>"; };
+		1FEFA2681EA4C35300389A83 /* stb_image.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = stb_image.c; sourceTree = "<group>"; };
+		1FEFA2691EA4C35300389A83 /* stb_image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_image.h; sourceTree = "<group>"; };
+		1FEFA26A1EA4C35300389A83 /* texture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = texture.cpp; sourceTree = "<group>"; };
+		1FEFA26B1EA4C35300389A83 /* texture.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = texture.hpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1F607DFC1E99EC3500578F77 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F0769081E9B7978006A9A52 /* include in Frameworks */,
+				1F0769061E9B78D6006A9A52 /* libSDL2-2.0.0.dylib in Frameworks */,
+				1F607E101E99F72F00578F77 /* libglfw.3.2.dylib in Frameworks */,
+				1F607E0F1E99F72100578F77 /* libGLEW.2.0.0.dylib in Frameworks */,
+				1F607E0A1E99F42C00578F77 /* OpenGL.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1F07690C1E9B8127006A9A52 /* res */ = {
+			isa = PBXGroup;
+			children = (
+				1FEFA2631EA4C02B00389A83 /* bricks.jpg */,
+				1F07690D1E9B8150006A9A52 /* basicShader.fs */,
+				1F07690E1E9B8172006A9A52 /* basicShader.vs */,
+			);
+			name = res;
+			sourceTree = "<group>";
+		};
+		1F607DF61E99EC3500578F77 = {
+			isa = PBXGroup;
+			children = (
+				1F07690A1E9B7ECD006A9A52 /* glmConfig.cmake */,
+				1F0769071E9B7978006A9A52 /* include */,
+				1F0769051E9B78D6006A9A52 /* libSDL2-2.0.0.dylib */,
+				1F607E0D1E99F57100578F77 /* libglfw.3.2.dylib */,
+				1F607E0B1E99F55D00578F77 /* libGLEW.2.0.0.dylib */,
+				1F607E091E99F42C00578F77 /* OpenGL.framework */,
+				1F607E011E99EC3500578F77 /* tesOpenGL */,
+				1F607E001E99EC3500578F77 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1F607E001E99EC3500578F77 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1F607DFF1E99EC3500578F77 /* tesOpenGL */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1F607E011E99EC3500578F77 /* tesOpenGL */ = {
+			isa = PBXGroup;
+			children = (
+				1FEFA2681EA4C35300389A83 /* stb_image.c */,
+				1FEFA2691EA4C35300389A83 /* stb_image.h */,
+				1FEFA26A1EA4C35300389A83 /* texture.cpp */,
+				1FEFA26B1EA4C35300389A83 /* texture.hpp */,
+				1F07690C1E9B8127006A9A52 /* res */,
+				1F607E021E99EC3500578F77 /* main.cpp */,
+				1F0768F91E9B68FF006A9A52 /* shader.cpp */,
+				1F0768FA1E9B68FF006A9A52 /* shader.hpp */,
+				1F0768FC1E9B69BC006A9A52 /* mesh.cpp */,
+				1F0768FD1E9B69BC006A9A52 /* mesh.hpp */,
+				1F0769001E9B6D74006A9A52 /* display.cpp */,
+				1F0769011E9B6D74006A9A52 /* display.hpp */,
+				1F0769031E9B6F13006A9A52 /* main1.cpp */,
+			);
+			path = tesOpenGL;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1F607DFE1E99EC3500578F77 /* tesOpenGL */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1F607E061E99EC3500578F77 /* Build configuration list for PBXNativeTarget "tesOpenGL" */;
+			buildPhases = (
+				1F607DFB1E99EC3500578F77 /* Sources */,
+				1F607DFC1E99EC3500578F77 /* Frameworks */,
+				1F607DFD1E99EC3500578F77 /* CopyFiles */,
+				1FA91D7A1E9C6F170075F15C /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = tesOpenGL;
+			productName = tesOpenGL;
+			productReference = 1F607DFF1E99EC3500578F77 /* tesOpenGL */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1F607DF71E99EC3500578F77 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Dharma Kurnia Septialoka";
+				TargetAttributes = {
+					1F607DFE1E99EC3500578F77 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 1F607DFA1E99EC3500578F77 /* Build configuration list for PBXProject "tesOpenGL" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1F607DF61E99EC3500578F77;
+			productRefGroup = 1F607E001E99EC3500578F77 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1F607DFE1E99EC3500578F77 /* tesOpenGL */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1F607DFB1E99EC3500578F77 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F0769041E9B6F13006A9A52 /* main1.cpp in Sources */,
+				1FEFA26C1EA4C35300389A83 /* stb_image.c in Sources */,
+				1F0768FB1E9B68FF006A9A52 /* shader.cpp in Sources */,
+				1FEFA26D1EA4C35300389A83 /* texture.cpp in Sources */,
+				1F0768FE1E9B69BC006A9A52 /* mesh.cpp in Sources */,
+				1F0769021E9B6D74006A9A52 /* display.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1F607E041E99EC3500578F77 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		1F607E051E99EC3500578F77 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		1F607E071E99EC3500578F77 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/glew/2.0.0/lib,
+					/usr/local/Cellar/glfw/3.2.1/lib,
+					/usr/local/Cellar/sdl2/2.0.5/lib,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1F607E081E99EC3500578F77 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/glew/2.0.0/lib,
+					/usr/local/Cellar/glfw/3.2.1/lib,
+					/usr/local/Cellar/sdl2/2.0.5/lib,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1F607DFA1E99EC3500578F77 /* Build configuration list for PBXProject "tesOpenGL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F607E041E99EC3500578F77 /* Debug */,
+				1F607E051E99EC3500578F77 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1F607E061E99EC3500578F77 /* Build configuration list for PBXNativeTarget "tesOpenGL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F607E071E99EC3500578F77 /* Debug */,
+				1F607E081E99EC3500578F77 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1F607DF71E99EC3500578F77 /* Project object */;
+}
