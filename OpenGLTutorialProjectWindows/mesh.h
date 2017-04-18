@@ -33,15 +33,19 @@ private:
 
 class Circle : public Vertex {
 public:
-	Circle(const glm::vec3& pos, const glm::vec3& color, const float& radius, const int& layer) : Vertex(pos, color, layer) {
+	Circle(const glm::vec3& pos, const glm::vec3& color, const glm::vec3& color_center, const float& radius, const int& layer) : Vertex(pos, color, layer) {
 		this->radius = radius;
+		this->color_center = color_center;
 	}
 
 	inline float* GetRadius() { return &radius; }
+	inline glm::vec3* GetColorCenter() { return &color_center; }
 protected:
 
 private:
+	
 	float radius;
+	glm::vec3 color_center;
 };
 
 class Mesh

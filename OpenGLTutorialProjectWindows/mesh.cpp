@@ -3,6 +3,7 @@
 #include <cstdio>
 #include <cmath>
 #include <vector>
+#include <iostream>
 #include <map>
 
 std::vector<glm::vec3> generateCircle(glm::vec3 center, float radius, unsigned int SEGMENTS);
@@ -145,18 +146,20 @@ Mesh::Mesh(Vertex* triangle, unsigned int numTriangles,
 
 				case CIRCLE_IDX:
 				
-					for (unsigned int j = 0, idxNow = 0; j < numCircles; ++j) {
+					for (unsigned int j = 0; j < numCircles; ++j) {
 						if (*circle[j].GetLayer() == idx_layer) {
-							idxNow++;
 							
 							std::vector<glm::vec3> result = generateCircle(*circle[j].GetPos(), *circle[j].GetRadius(), NUM_SEGMENTS);
 							positions.insert(positions.end(), result.begin(), result.end());
 							
-							for(unsigned int k = 0;k <= NUM_SEGMENTS; ++k)
+							colors.push_back(*circle[j].GetColorCenter());
+							for(unsigned int k = 1;k <= NUM_SEGMENTS; ++k)
 								colors.push_back(*circle[j].GetColor());
 						}
 					}
 					assert(positions.size() == m_vertexCount[idx_layer][i]);
+					assert(colors.size() == m_vertexCount[idx_layer][i]);
+
 					break;
 
 				default:
@@ -222,7 +225,6 @@ void Mesh::Draw() {
 						glMultiDrawArrays(GL_TRIANGLE_FAN, first, counts, m_drawCount[idx_layer][i]);
 						*/
 						for (unsigned int j = 0, now = 0; j < m_drawCount[idx_layer][i]; ++j, now += NUM_SEGMENTS + 1) {
-
 							glDrawArrays(GL_TRIANGLE_FAN, now, now + NUM_SEGMENTS + 1);
 						}
 
