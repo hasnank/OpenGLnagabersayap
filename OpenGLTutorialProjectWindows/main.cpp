@@ -15,7 +15,7 @@
 #include "texture.h"
 
 int main(int argc, char** argv) {
-	Display display(800, 800, "Hello, World!");
+	Display display(800, 600, "Hello, World!");
 
 	Vertex triangles[] = {
 		Vertex(glm::vec3(-0.112000f, 0.140000f, 0), glm::vec3(1.0f, 1.0f, 0.0f), 1),
@@ -101,14 +101,14 @@ int main(int argc, char** argv) {
 
 	Circle circle[] = {
 		// pelangi
-		Circle(glm::vec3(0, 0, 0), glm::vec3(1.0, 0.0, 0.0), 0.75, 0),
-		Circle(glm::vec3(0, 0, 0), glm::vec3(1.0, 127.0/255.0, 0.0), 0.7, 0),
-		Circle(glm::vec3(0, 0, 0), glm::vec3(1.0, 1.0, 0.0), 0.65, 0),
-		Circle(glm::vec3(0, 0, 0), glm::vec3(0.0, 1.0, 0.0), 0.6, 0),
-		Circle(glm::vec3(0, 0, 0), glm::vec3(0.0, 0.0, 1.0), 0.55, 0),
-		Circle(glm::vec3(0, 0, 0), glm::vec3(75.0/255.0, 0.0, 130.0 / 255.0), 0.5, 0),
-		Circle(glm::vec3(0, 0, 0), glm::vec3(139.0 / 255.0, 0.0, 1.0), 0.45, 0),
-		Circle(glm::vec3(0, 0, 0), glm::vec3(0.5, 0.7, 1.0), 0.40, 0),
+		Circle(glm::vec3(0, 0, 0), glm::vec3(1.0, 0.0, 0.0), 0.7, 0),
+		Circle(glm::vec3(0, 0, 0), glm::vec3(1.0, 127.0/255.0, 0.0), 0.67, 0),
+		Circle(glm::vec3(0, 0, 0), glm::vec3(1.0, 1.0, 0.0), 0.64, 0),
+		Circle(glm::vec3(0, 0, 0), glm::vec3(0.0, 1.0, 0.0), 0.61, 0),
+		Circle(glm::vec3(0, 0, 0), glm::vec3(0.0, 0.0, 1.0), 0.58, 0),
+		Circle(glm::vec3(0, 0, 0), glm::vec3(75.0/255.0, 0.0, 130.0 / 255.0), 0.55, 0),
+		Circle(glm::vec3(0, 0, 0), glm::vec3(139.0 / 255.0, 0.0, 1.0), 0.52, 0),
+		Circle(glm::vec3(0, 0, 0), glm::vec3(0.5, 0.7, 1.0), 0.49, 0),
 
 		// matahari
 		Circle(glm::vec3(0.031, 0, 0), glm::vec3(1,1,0), 0.1965, 0),
