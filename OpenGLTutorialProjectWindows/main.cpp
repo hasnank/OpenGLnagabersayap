@@ -32,8 +32,8 @@ int main(int argc, char** argv) {
 	Vertex quads[] = {
 		Vertex(glm::vec3(-0.5, -0.5, -1), glm::vec3(0.0, 0.0, 0.0)),
 		Vertex(glm::vec3(-0.5, 0.5, 0),  glm::vec3(1.0, 1.0, 1.0)),
-		Vertex(glm::vec3(0.5, -0.5, 1),  glm::vec3(1.0, 1.0, 1.0)),
 		Vertex(glm::vec3(0.5, 0.5, 1),  glm::vec3(1.0, 1.0, 1.0)),
+		Vertex(glm::vec3(0.5, -0.5, 1),  glm::vec3(1.0, 1.0, 1.0)),
 	};
 
 	Circle circle[] = {
