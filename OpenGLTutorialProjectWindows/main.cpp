@@ -18,22 +18,27 @@ int main(int argc, char** argv) {
 	Display display(800, 600, "Hello, World!");
 
 	Vertex triangles[] = {
-		Vertex(glm::vec3(-1.000000f, -0.342000f, 0), glm::vec3(0.652344f, 0.941406f, 0.847656f)),
-		Vertex(glm::vec3(0.382000f, 1.000000f, 0), glm::vec3(0.164062f, 0.507812f, 0.781250f)),
-		Vertex(glm::vec3(-1.000000f, -1.000000f, 0), glm::vec3(0.843750f, 0.992188f, 0.261719f)),
-		Vertex(glm::vec3(-0.660000f, 1.000000f, 0), glm::vec3(0.300781f, 0.593750f, 0.332031f)),
-		Vertex(glm::vec3(1.000000f, -0.272000f, 0), glm::vec3(0.546875f, 0.882812f, 0.699219f)),
-		Vertex(glm::vec3(1.000000f, -1.000000f, 0), glm::vec3(0.277344f, 0.089844f, 0.066406f)),
-		Vertex(glm::vec3(-0.480000f, 1.000000f, 0), glm::vec3(0.593750f, 0.328125f, 0.183594f)),
-		Vertex(glm::vec3(1.000000f, -0.580000f, 0), glm::vec3(0.066406f, 0.175781f, 0.019531f)),
-		Vertex(glm::vec3(1.000000f, -1.000000f, 0), glm::vec3(0.343750f, 0.957031f, 0.417969f)),
+		Vertex(glm::vec3(-0.1f, -0.5f, 0), glm::vec3(0.0f, 0.941406f, 0.0f)),
+		Vertex(glm::vec3(-0.5f, -0.5f, 0), glm::vec3(0.0f, 0.507812f, 0.0f)),
+		Vertex(glm::vec3(-0.3f, -0.1f, 0), glm::vec3(0.0f, 0.992188f, 0.0f)),
+		Vertex(glm::vec3(-0.1f, -0.2f, 0), glm::vec3(0.0f, 0.593750f, 0.0f)),
+		Vertex(glm::vec3(-0.5f, -0.2f, 0), glm::vec3(0.0f, 0.882812f, 0.0f)),
+		Vertex(glm::vec3(-0.3f, 0.2f, 0), glm::vec3(0.0f, 0.089844f, 0.0f)),
+		Vertex(glm::vec3(-0.1f, 0.1f, 0), glm::vec3(0.0f, 0.328125f, 0.0f)),
+		Vertex(glm::vec3(-0.5f, 0.1f, 0), glm::vec3(0.0f, 0.175781f, 0.0f)),
+		Vertex(glm::vec3(-0.3f, 0.4f, 0), glm::vec3(0.0f, 0.957031f, 0.0f)),
 	};
 
 	Vertex quads[] = {
-		Vertex(glm::vec3(-0.5, -0.5, -1), glm::vec3(0.0, 0.0, 0.0)),
-		Vertex(glm::vec3(-0.5, 0.5, 0),  glm::vec3(1.0, 1.0, 1.0)),
-		Vertex(glm::vec3(0.5, 0.5, 1),  glm::vec3(1.0, 1.0, 1.0)),
-		Vertex(glm::vec3(0.5, -0.5, 1),  glm::vec3(1.0, 1.0, 1.0)),
+		Vertex(glm::vec3(-1.0, -1.0, -1.0),  glm::vec3(0.8, 0.9, 1.0)),
+		Vertex(glm::vec3(-1.0, 1.0, -1.0),  glm::vec3(0.5, 0.7, 1.0)),
+		Vertex(glm::vec3(1.0, 1.0, -1.0),  glm::vec3(0.5, 0.7, 1.0)),
+		Vertex(glm::vec3(1.0, -1.0, -1.0),  glm::vec3(0.8, 0.9, 1.0)),
+		Vertex(glm::vec3(-0.25, -1, 0), glm::vec3(0.5, 0.25, 0.0)),
+		Vertex(glm::vec3(-0.25, -0.5, 0),  glm::vec3(0.6, 0.3, 0.0)),
+		Vertex(glm::vec3(-0.35, -0.5, 0),  glm::vec3(0.6, 0.3, 0.0)),
+		Vertex(glm::vec3(-0.35, -1, 0),  glm::vec3(0.5, 0.25, 0.0)),
+		
 	};
 
 	Circle circle[] = {
@@ -47,7 +52,8 @@ int main(int argc, char** argv) {
 	};
 
 	GLuint quadsElmt[] = {
-		0,1,2,3
+		0,1,2,3,
+		4,5,6,7
 	};
 
 
