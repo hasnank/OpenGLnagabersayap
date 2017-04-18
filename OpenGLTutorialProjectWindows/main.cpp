@@ -15,7 +15,7 @@
 #include "texture.h"
 
 int main(int argc, char** argv) {
-	Display display(800, 600, "Hello, World!");
+	Display display(800, 800, "Hello, World!");
 
 	Vertex triangles[] = {
 		Vertex(glm::vec3(-0.112000f, 0.140000f, 0), glm::vec3(1.0f, 1.0f, 0.0f), 1),
@@ -59,7 +59,6 @@ int main(int argc, char** argv) {
 		Vertex(glm::vec3(-0.5f, 0.1f, 0), glm::vec3(0.0f, 0.175781f, 0.0f), 2),
 		Vertex(glm::vec3(-0.3f, 0.4f, 0), glm::vec3(0.0f, 0.957031f, 0.0f), 2),
 
-		
 	};
 
 	GLuint triangleElmt[] = {
@@ -101,7 +100,17 @@ int main(int argc, char** argv) {
 	};
 
 	Circle circle[] = {
-		Circle(glm::vec3(0.5, 0.5, 0), glm::vec3(0,0,0), 0.4, 2),
+		// pelangi
+		Circle(glm::vec3(0, 0, 0), glm::vec3(1.0, 0.0, 0.0), 0.75, 0),
+		Circle(glm::vec3(0, 0, 0), glm::vec3(1.0, 127.0/255.0, 0.0), 0.7, 0),
+		Circle(glm::vec3(0, 0, 0), glm::vec3(1.0, 1.0, 0.0), 0.65, 0),
+		Circle(glm::vec3(0, 0, 0), glm::vec3(0.0, 1.0, 0.0), 0.6, 0),
+		Circle(glm::vec3(0, 0, 0), glm::vec3(0.0, 0.0, 1.0), 0.55, 0),
+		Circle(glm::vec3(0, 0, 0), glm::vec3(75.0/255.0, 0.0, 130.0 / 255.0), 0.5, 0),
+		Circle(glm::vec3(0, 0, 0), glm::vec3(139.0 / 255.0, 0.0, 1.0), 0.45, 0),
+		Circle(glm::vec3(0, 0, 0), glm::vec3(0.5, 0.7, 1.0), 0.40, 0),
+
+		// matahari
 		Circle(glm::vec3(0.031, 0, 0), glm::vec3(1,1,0), 0.1965, 0),
 	};
 
@@ -111,8 +120,6 @@ int main(int argc, char** argv) {
 		quadsElmt, sizeof(quadsElmt) / sizeof(quadsElmt[0]),
 		circle, sizeof(circle) / sizeof(circle[0]));
 
-
-	//    Mesh mesh(vertices, sizeof(vertices) / sizeof(vertices[0]));
 	Shader shader("./res/basicShader");
 	// Texture texture("./res/bricks.jpg");
 

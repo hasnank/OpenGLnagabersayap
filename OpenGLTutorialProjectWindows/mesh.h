@@ -73,7 +73,7 @@ private:
 		CIRCLE_IDX,
 		NUM_MODELS
 	};
-	static const unsigned int NUM_SEGMENTS = 100;
+	static const unsigned int NUM_SEGMENTS = 50;
 	static const unsigned int NUM_LAYERS = 3;
 	GLuint m_vertexArrayObject[NUM_LAYERS][NUM_MODELS];
 	GLuint m_vertexArrayBuffer[NUM_LAYERS][NUM_MODELS][NUM_BUFFERS];

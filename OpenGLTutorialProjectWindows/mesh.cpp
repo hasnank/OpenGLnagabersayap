@@ -31,7 +31,7 @@ Mesh::Mesh(Vertex* triangle, unsigned int numTriangles,
 		m_drawCount[*quad[idxQuad[i]].GetLayer()][QUAD_IDX]++;
 
 	for (unsigned int i = 0; i < numCircles; ++i) // use Array!
-		m_drawCount[*circle[i].GetLayer()][CIRCLE_IDX] += (NUM_SEGMENTS + 1);
+		m_drawCount[*circle[i].GetLayer()][CIRCLE_IDX] ++;
 
 	unsigned int m_vertexCount[NUM_LAYERS][NUM_MODELS];
 	for (unsigned int i = 0; i < NUM_LAYERS; ++i)
@@ -156,7 +156,7 @@ Mesh::Mesh(Vertex* triangle, unsigned int numTriangles,
 								colors.push_back(*circle[j].GetColor());
 						}
 					}
-					assert(positions.size() == m_drawCount[idx_layer][i]);
+					assert(positions.size() == m_vertexCount[idx_layer][i]);
 					break;
 
 				default:
@@ -213,8 +213,21 @@ void Mesh::Draw() {
 					break;
 
 				case CIRCLE_IDX:
-					if (m_drawCount[idx_layer][i] > 0)
-						glDrawArraysInstanced(GL_TRIANGLE_FAN, 0, NUM_SEGMENTS + 1, m_drawCount[idx_layer][i]);
+					if (m_drawCount[idx_layer][i] > 0) {
+						//glDrawArrays(GL_TRIANGLE_FAN, 0, NUM_SEGMENTS + 1);
+						/*
+						vector<GLint> first;
+						vector<GLsizei> counts;
+
+						glMultiDrawArrays(GL_TRIANGLE_FAN, first, counts, m_drawCount[idx_layer][i]);
+						*/
+						for (unsigned int j = 0, now = 0; j < m_drawCount[idx_layer][i]; ++j, now += NUM_SEGMENTS + 1) {
+
+							glDrawArrays(GL_TRIANGLE_FAN, now, now + NUM_SEGMENTS + 1);
+						}
+
+					}
+						
 					break;
 				default:
 					break;
