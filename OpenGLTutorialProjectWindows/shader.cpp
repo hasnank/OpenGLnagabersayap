@@ -16,7 +16,7 @@ Shader::Shader(const std::string& fileName)
 		glAttachShader(m_program, m_shaders[i]);
 
 	glBindAttribLocation(m_program, 0, "position"); //make sure it same with the vertex shader
-	glBindAttribLocation(m_program, 1, "color");
+	glBindAttribLocation(m_program, 1, "texCoord");
 
 	glLinkProgram(m_program);
 	CheckShaderError(m_program, GL_LINK_STATUS, true, "Error: Program linking failed: ");
@@ -31,7 +31,7 @@ Shader::~Shader()
 		glDetachShader(m_program, m_shaders[i]);
 		glDeleteShader(m_shaders[i]);
 	}
-		
+
 	glDeleteProgram(m_program);
 }
 
@@ -101,4 +101,3 @@ static std::string LoadShader(const std::string& fileName) {
 
 	return output;
 }
-
