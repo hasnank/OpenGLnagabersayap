@@ -17,10 +17,12 @@ int main(int argc, char** argv) {
 		Vertex(glm::vec3(-0.5, -0.5, 0), glm::vec2(0.0, 0.0)),
 		Vertex(glm::vec3(0, 0.5, 0),  glm::vec2(0.5, 1.0)),
 		Vertex(glm::vec3(0.5, -0.5, 0),  glm::vec2(1.0, 0.0)),
+		Vertex(glm::vec3(0.5, 0.5, 0),  glm::vec2(0.5, 0.0)),
 	};
 
 	unsigned int indices[] = {
-		0, 1, 2
+		0, 1, 2,
+		1, 2, 3
 	};
 
 	Mesh mesh(vertices, sizeof(vertices) / sizeof(vertices[0]), indices, sizeof(indices) / sizeof(indices[0]));
@@ -28,7 +30,7 @@ int main(int argc, char** argv) {
 
 	Shader shader("./res/basicShader");
 	Texture texture("./res/bricks.jpg");
-	Camera camera(glm::vec3(0, 0, -4), 70.0f, (float)WIDTH / (float)HEIGHT, 0.01f, 1000.0f);
+	Camera camera(glm::vec3(0, 0, -3), 70.0f, (float)WIDTH / (float)HEIGHT, 0.01f, 1000.0f);
 	Transform transform;
 
 	float counter = 0.0f;
@@ -44,12 +46,12 @@ int main(int argc, char** argv) {
 		transform.GetRot().x = counter;
 		transform.GetRot().y = counter;
 		transform.GetRot().z = counter;
-		//transform.SetScale(glm::vec3(cosCounter, cosCounter, cosCounter));
+		transform.SetScale(glm::vec3(cosCounter, cosCounter, cosCounter));
 
 		shader.Bind();
 		texture.Bind(0);
 		shader.Update(transform,camera);
-		mesh2.Draw();
+		mesh.Draw();
 
 		display.Update();
 		counter += 0.001f;
