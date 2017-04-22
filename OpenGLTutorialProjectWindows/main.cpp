@@ -14,15 +14,23 @@ int main(int argc, char** argv) {
 	Display display(WIDTH, HEIGHT, "3D!");
 
 	Vertex vertices[] = {
-		Vertex(glm::vec3(-0.5, -0.5, 0), glm::vec2(0.0, 0.0)),
-		Vertex(glm::vec3(0, 0.5, 0),  glm::vec2(0.5, 1.0)),
-		Vertex(glm::vec3(0.5, -0.5, 0),  glm::vec2(1.0, 0.0)),
-		Vertex(glm::vec3(0.5, 0.5, 0),  glm::vec2(0.5, 0.0)),
+		Vertex(glm::vec3(0.346, 0.723, 0.0365), glm::vec2(0.0, 0.0)),
+		Vertex(glm::vec3(-0.346, 0.723, 0.0365),  glm::vec2(0.5, 1.0)),
+		Vertex(glm::vec3(-0.346, -0.723, 0.0365),  glm::vec2(1.0, 0.0)),
+		Vertex(glm::vec3(0.346, -0.723, 0.0365),  glm::vec2(0.5, 0.0)),
+		Vertex(glm::vec3(0.346, 0.723, -0.0365), glm::vec2(0.0, 0.0)),
+		Vertex(glm::vec3(-0.346, 0.723, -0.0365),  glm::vec2(0.5, 1.0)),
+		Vertex(glm::vec3(-0.346, -0.723, -0.0365),  glm::vec2(1.0, 0.0)),
+		Vertex(glm::vec3(0.346, -0.723, -0.0365),  glm::vec2(0.5, 0.0)),
 	};
 
 	unsigned int indices[] = {
-		0, 1, 2,
-		1, 2, 3
+		0, 1, 2, 3,
+		4, 5, 6, 7,
+		0, 1, 5, 4,
+		2, 3, 7, 6,
+		0, 3, 7, 4,
+		1, 2, 6, 5,
 	};
 
 	Mesh mesh(vertices, sizeof(vertices) / sizeof(vertices[0]), indices, sizeof(indices) / sizeof(indices[0]));

@@ -69,6 +69,6 @@ void Mesh::Draw() {
 
 	//glDrawArrays(GL_TRIANGLES, 0, m_drawCount);
 	//printf("%d\n", m_drawCount);
-	glDrawElements(GL_TRIANGLES, m_drawCount, GL_UNSIGNED_INT, 0);
+	glDrawElements(GL_QUADS, m_drawCount, GL_UNSIGNED_INT, 0);
 	glBindVertexArray(0); // unbind
 }
