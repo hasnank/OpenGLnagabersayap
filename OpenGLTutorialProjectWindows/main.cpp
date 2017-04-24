@@ -7,37 +7,65 @@
 #include "transform.h"
 #include "camera.h"
 
-#define WIDTH 800
+#define WIDTH 600
 #define HEIGHT 600
 
 int main(int argc, char** argv) {
 	Display display(WIDTH, HEIGHT, "3D!");
 
 	Vertex vertices[] = {
-		Vertex(glm::vec3(0.346, 0.723, 0.0365), glm::vec2(0.0, 0.0)),
-		Vertex(glm::vec3(-0.346, 0.723, 0.0365),  glm::vec2(0.5, 1.0)),
-		Vertex(glm::vec3(-0.346, -0.723, 0.0365),  glm::vec2(1.0, 0.0)),
-		Vertex(glm::vec3(0.346, -0.723, 0.0365),  glm::vec2(0.5, 0.0)),
-		Vertex(glm::vec3(0.346, 0.723, -0.0365), glm::vec2(0.0, 0.0)),
-		Vertex(glm::vec3(-0.346, 0.723, -0.0365),  glm::vec2(0.5, 1.0)),
-		Vertex(glm::vec3(-0.346, -0.723, -0.0365),  glm::vec2(1.0, 0.0)),
-		Vertex(glm::vec3(0.346, -0.723, -0.0365),  glm::vec2(0.5, 0.0)),
+		//depan
+		Vertex(glm::vec3(0.346, 0.723, 0.0365), glm::vec2(0.4, 0.107)),
+		Vertex(glm::vec3(-0.346, 0.723, 0.0365),  glm::vec2(0.166, 0.107)),
+		Vertex(glm::vec3(-0.346, -0.723, 0.0365),  glm::vec2(0.166, 0.615)),
+		Vertex(glm::vec3(0.346, -0.723, 0.0365),  glm::vec2(0.4, 0.615)),
+		//belakang
+		Vertex(glm::vec3(0.346, 0.723, -0.0365), glm::vec2(0.836, 0.107)),
+		Vertex(glm::vec3(-0.346, 0.723, -0.0365),  glm::vec2(0.617, 0.107)),
+		Vertex(glm::vec3(-0.346, -0.723, -0.0365),  glm::vec2(0.617, 0.615)),
+		Vertex(glm::vec3(0.346, -0.723, -0.0365),  glm::vec2(0.836, 0.615)),
+		//atas
+		Vertex(glm::vec3(0.346, 0.723, 0.0365), glm::vec2(0.283, 0.791)),
+		Vertex(glm::vec3(-0.346, 0.723, 0.0365),  glm::vec2(0.664, 0.791)),
+		Vertex(glm::vec3(-0.346, 0.723, -0.0365),  glm::vec2(0.664, 0.832)),
+		Vertex(glm::vec3(0.346, 0.723, -0.0365), glm::vec2(0.283, 0.832)),
+		//bawah
+		Vertex(glm::vec3(-0.346, -0.723, 0.0365),  glm::vec2(0.283, 0.791)),
+		Vertex(glm::vec3(0.346, -0.723, 0.0365),  glm::vec2(0.664, 0.791)),
+		Vertex(glm::vec3(0.346, -0.723, -0.0365),  glm::vec2(0.664, 0.832)),
+		Vertex(glm::vec3(-0.346, -0.723, -0.0365),  glm::vec2(0.283, 0.832)),
+		//kanan
+		Vertex(glm::vec3(0.346, 0.723, 0.0365), glm::vec2(0.06, 0.723)),
+		Vertex(glm::vec3(0.346, -0.723, 0.0365),  glm::vec2(0.904, 0.723)),
+		Vertex(glm::vec3(0.346, -0.723, -0.0365),  glm::vec2(0.904, 0.686)),
+		Vertex(glm::vec3(0.346, 0.723, -0.0365), glm::vec2(0.06, 0.686)),
+		//kiri
+		Vertex(glm::vec3(-0.346, 0.723, 0.0365),  glm::vec2(0.06, 0.723)),
+		Vertex(glm::vec3(-0.346, -0.723, 0.0365),  glm::vec2(0.904, 0.723)),
+		Vertex(glm::vec3(-0.346, -0.723, -0.0365),  glm::vec2(0.904, 0.686)),
+		Vertex(glm::vec3(-0.346, 0.723, -0.0365),  glm::vec2(0.06, 0.686)),
 	};
 
 	unsigned int indices[] = {
+		//depan
 		0, 1, 2, 3,
+		//belakang
 		4, 5, 6, 7,
-		0, 1, 5, 4,
-		2, 3, 7, 6,
-		0, 3, 7, 4,
-		1, 2, 6, 5,
+		//atas
+		8, 9, 10, 11,
+		//bawah
+		12, 13, 14, 15,
+		//kanan
+		16, 17, 18, 19,
+		//kiri
+		20, 21, 22, 23,
 	};
 
 	Mesh mesh(vertices, sizeof(vertices) / sizeof(vertices[0]), indices, sizeof(indices) / sizeof(indices[0]));
 	Mesh mesh2("./res/monkey3.obj");
 
 	Shader shader("./res/basicShader");
-	Texture texture("./res/bricks.jpg");
+	Texture texture("./res/Untitled-1.png");
 	Camera camera(glm::vec3(0, 0, -3), 70.0f, (float)WIDTH / (float)HEIGHT, 0.01f, 1000.0f);
 	Transform transform;
 
