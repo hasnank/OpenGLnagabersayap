@@ -15,35 +15,35 @@ int main(int argc, char** argv) {
 
 	Vertex vertices[] = {
 		//depan
-		Vertex(glm::vec3(0.346, 0.723, 0.0365), glm::vec2(0.4, 0.107)),
-		Vertex(glm::vec3(-0.346, 0.723, 0.0365),  glm::vec2(0.166, 0.107)),
-		Vertex(glm::vec3(-0.346, -0.723, 0.0365),  glm::vec2(0.166, 0.615)),
-		Vertex(glm::vec3(0.346, -0.723, 0.0365),  glm::vec2(0.4, 0.615)),
+		Vertex(glm::vec3(0.346, 0.723, 0.0365), glm::vec2(0.4, 0.107), glm::vec3(0,0,1)),
+		Vertex(glm::vec3(-0.346, 0.723, 0.0365),  glm::vec2(0.166, 0.107), glm::vec3(0,0,1)),
+		Vertex(glm::vec3(-0.346, -0.723, 0.0365),  glm::vec2(0.166, 0.615), glm::vec3(0,0,1)),
+		Vertex(glm::vec3(0.346, -0.723, 0.0365),  glm::vec2(0.4, 0.615), glm::vec3(0,0,1)),
 		//belakang
-		Vertex(glm::vec3(0.346, 0.723, -0.0365), glm::vec2(0.836, 0.107)),
-		Vertex(glm::vec3(-0.346, 0.723, -0.0365),  glm::vec2(0.617, 0.107)),
-		Vertex(glm::vec3(-0.346, -0.723, -0.0365),  glm::vec2(0.617, 0.615)),
-		Vertex(glm::vec3(0.346, -0.723, -0.0365),  glm::vec2(0.836, 0.615)),
+		Vertex(glm::vec3(0.346, 0.723, -0.0365), glm::vec2(0.836, 0.107), glm::vec3(0,0,-1)),
+		Vertex(glm::vec3(-0.346, 0.723, -0.0365),  glm::vec2(0.617, 0.107), glm::vec3(0,0,-1)),
+		Vertex(glm::vec3(-0.346, -0.723, -0.0365),  glm::vec2(0.617, 0.615), glm::vec3(0,0,-1)),
+		Vertex(glm::vec3(0.346, -0.723, -0.0365),  glm::vec2(0.836, 0.615), glm::vec3(0,0,-1)),
 		//atas
-		Vertex(glm::vec3(0.346, 0.723, 0.0365), glm::vec2(0.672, 0.031)),
-		Vertex(glm::vec3(-0.346, 0.723, 0.0365),  glm::vec2(0.283, 0.066)),
-		Vertex(glm::vec3(-0.346, 0.723, -0.0365),  glm::vec2(0.283, 0.066)),
-		Vertex(glm::vec3(0.346, 0.723, -0.0365), glm::vec2(0.672, 0.031)),
+		Vertex(glm::vec3(0.346, 0.723, 0.0365), glm::vec2(0.672, 0.031), glm::vec3(0,1,0)),
+		Vertex(glm::vec3(-0.346, 0.723, 0.0365),  glm::vec2(0.283, 0.066), glm::vec3(0,1,0)),
+		Vertex(glm::vec3(-0.346, 0.723, -0.0365),  glm::vec2(0.283, 0.066), glm::vec3(0,1,0)),
+		Vertex(glm::vec3(0.346, 0.723, -0.0365), glm::vec2(0.672, 0.031), glm::vec3(0,1,0)),
 		//bawah
-		Vertex(glm::vec3(-0.346, -0.723, 0.0365),  glm::vec2(0.283, 0.791)),
-		Vertex(glm::vec3(0.346, -0.723, 0.0365),  glm::vec2(0.664, 0.791)),
-		Vertex(glm::vec3(0.346, -0.723, -0.0365),  glm::vec2(0.664, 0.832)),
-		Vertex(glm::vec3(-0.346, -0.723, -0.0365),  glm::vec2(0.283, 0.832)),
+		Vertex(glm::vec3(-0.346, -0.723, 0.0365),  glm::vec2(0.283, 0.791), glm::vec3(0,-1,0)),
+		Vertex(glm::vec3(0.346, -0.723, 0.0365),  glm::vec2(0.664, 0.791), glm::vec3(0,-1,0)),
+		Vertex(glm::vec3(0.346, -0.723, -0.0365),  glm::vec2(0.664, 0.832), glm::vec3(0,-1,0)),
+		Vertex(glm::vec3(-0.346, -0.723, -0.0365),  glm::vec2(0.283, 0.832), glm::vec3(0,-1,0)),
 		//kanan
-		Vertex(glm::vec3(0.346, 0.723, 0.0365), glm::vec2(0.06, 0.723)),
-		Vertex(glm::vec3(0.346, -0.723, 0.0365),  glm::vec2(0.904, 0.723)),
-		Vertex(glm::vec3(0.346, -0.723, -0.0365),  glm::vec2(0.904, 0.686)),
-		Vertex(glm::vec3(0.346, 0.723, -0.0365), glm::vec2(0.06, 0.686)),
+		Vertex(glm::vec3(0.346, 0.723, 0.0365), glm::vec2(0.06, 0.723), glm::vec3(1,0,0)),
+		Vertex(glm::vec3(0.346, -0.723, 0.0365),  glm::vec2(0.904, 0.723), glm::vec3(1,0,0)),
+		Vertex(glm::vec3(0.346, -0.723, -0.0365),  glm::vec2(0.904, 0.686), glm::vec3(1,0,0)),
+		Vertex(glm::vec3(0.346, 0.723, -0.0365), glm::vec2(0.06, 0.686), glm::vec3(1,0,0)),
 		//kiri
-		Vertex(glm::vec3(-0.346, 0.723, 0.0365),  glm::vec2(0.893, 0.97)),
-		Vertex(glm::vec3(-0.346, -0.723, 0.0365),  glm::vec2(0.063, 0.97)),
-		Vertex(glm::vec3(-0.346, -0.723, -0.0365),  glm::vec2(0.063, 0.934)),
-		Vertex(glm::vec3(-0.346, 0.723, -0.0365),  glm::vec2(0.893, 0.934)),
+		Vertex(glm::vec3(-0.346, 0.723, 0.0365),  glm::vec2(0.893, 0.97), glm::vec3(-1,0,0)),
+		Vertex(glm::vec3(-0.346, -0.723, 0.0365),  glm::vec2(0.063, 0.97), glm::vec3(-1,0,0)),
+		Vertex(glm::vec3(-0.346, -0.723, -0.0365),  glm::vec2(0.063, 0.934), glm::vec3(-1,0,0)),
+		Vertex(glm::vec3(-0.346, 0.723, -0.0365),  glm::vec2(0.893, 0.934), glm::vec3(-1,0,0)),
 	};
 
 	unsigned int indices[] = {
@@ -62,7 +62,7 @@ int main(int argc, char** argv) {
 	};
 
 	Mesh mesh(vertices, sizeof(vertices) / sizeof(vertices[0]), indices, sizeof(indices) / sizeof(indices[0]));
-	Mesh mesh2("./res/monkey3.obj");
+	//Mesh mesh2("./res/monkey3.obj");
 
 	Shader shader("./res/basicShader");
 	Texture texture("./res/Untitled-1.png");

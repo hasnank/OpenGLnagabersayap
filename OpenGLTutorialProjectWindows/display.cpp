@@ -23,8 +23,7 @@ Display::Display(int width, int height, const std::string& title)
 	}
 	m_isClosed = false;
 	
-	glEnable(GL_DEPTH_TEST);
-	
+	glEnable(GL_DEPTH_TEST); 
 	//glEnable(GL_CULL_FACE);
 	//glCullFace(GL_BACK);
 }
