@@ -25,10 +25,10 @@ int main(int argc, char** argv) {
 		Vertex(glm::vec3(-0.346, -0.723, -0.0365),  glm::vec2(0.617, 0.615)),
 		Vertex(glm::vec3(0.346, -0.723, -0.0365),  glm::vec2(0.836, 0.615)),
 		//atas
-		Vertex(glm::vec3(0.346, 0.723, 0.0365), glm::vec2(0.283, 0.791)),
-		Vertex(glm::vec3(-0.346, 0.723, 0.0365),  glm::vec2(0.664, 0.791)),
-		Vertex(glm::vec3(-0.346, 0.723, -0.0365),  glm::vec2(0.664, 0.832)),
-		Vertex(glm::vec3(0.346, 0.723, -0.0365), glm::vec2(0.283, 0.832)),
+		Vertex(glm::vec3(0.346, 0.723, 0.0365), glm::vec2(0.672, 0.031)),
+		Vertex(glm::vec3(-0.346, 0.723, 0.0365),  glm::vec2(0.283, 0.066)),
+		Vertex(glm::vec3(-0.346, 0.723, -0.0365),  glm::vec2(0.283, 0.066)),
+		Vertex(glm::vec3(0.346, 0.723, -0.0365), glm::vec2(0.672, 0.031)),
 		//bawah
 		Vertex(glm::vec3(-0.346, -0.723, 0.0365),  glm::vec2(0.283, 0.791)),
 		Vertex(glm::vec3(0.346, -0.723, 0.0365),  glm::vec2(0.664, 0.791)),
@@ -40,10 +40,10 @@ int main(int argc, char** argv) {
 		Vertex(glm::vec3(0.346, -0.723, -0.0365),  glm::vec2(0.904, 0.686)),
 		Vertex(glm::vec3(0.346, 0.723, -0.0365), glm::vec2(0.06, 0.686)),
 		//kiri
-		Vertex(glm::vec3(-0.346, 0.723, 0.0365),  glm::vec2(0.06, 0.723)),
-		Vertex(glm::vec3(-0.346, -0.723, 0.0365),  glm::vec2(0.904, 0.723)),
-		Vertex(glm::vec3(-0.346, -0.723, -0.0365),  glm::vec2(0.904, 0.686)),
-		Vertex(glm::vec3(-0.346, 0.723, -0.0365),  glm::vec2(0.06, 0.686)),
+		Vertex(glm::vec3(-0.346, 0.723, 0.0365),  glm::vec2(0.893, 0.97)),
+		Vertex(glm::vec3(-0.346, -0.723, 0.0365),  glm::vec2(0.063, 0.97)),
+		Vertex(glm::vec3(-0.346, -0.723, -0.0365),  glm::vec2(0.063, 0.934)),
+		Vertex(glm::vec3(-0.346, 0.723, -0.0365),  glm::vec2(0.893, 0.934)),
 	};
 
 	unsigned int indices[] = {
