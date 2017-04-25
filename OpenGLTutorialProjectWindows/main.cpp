@@ -77,12 +77,12 @@ int main(int argc, char** argv) {
 		float sinCounter = sinf(counter);
 		float cosCounter = cosf(counter);
 
-		transform.GetPos().x = sinCounter;
-		transform.GetPos().z = cosCounter;
-		transform.GetRot().x = counter;
+		//transform.GetPos().x = sinCounter;
+		//transform.GetPos().z = cosCounter;
+		//transform.GetRot().x = counter;
 		transform.GetRot().y = counter;
-		transform.GetRot().z = counter;
-		transform.SetScale(glm::vec3(cosCounter, cosCounter, cosCounter));
+		//transform.GetRot().z = counter;
+		//transform.SetScale(glm::vec3(cosCounter, cosCounter, cosCounter));
 
 		shader.Bind();
 		texture.Bind(0);
