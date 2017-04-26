@@ -15,19 +15,19 @@ int main(int argc, char** argv) {
 
 	Vertex vertices[] = {
 		//depan
-		Vertex(glm::vec3(0.346, 0.723, 0.0365), glm::vec2(0.4, 0.107), glm::vec3(0,0,1)),
-		Vertex(glm::vec3(-0.346, 0.723, 0.0365),  glm::vec2(0.166, 0.107), glm::vec3(0,0,1)),
-		Vertex(glm::vec3(-0.346, -0.723, 0.0365),  glm::vec2(0.166, 0.615), glm::vec3(0,0,1)),
-		Vertex(glm::vec3(0.346, -0.723, 0.0365),  glm::vec2(0.4, 0.615), glm::vec3(0,0,1)),
+		Vertex(glm::vec3(0.346, 0.723, 0.0365), glm::vec2(0.41, 0.107), glm::vec3(0,0,1)),
+		Vertex(glm::vec3(-0.346, 0.723, 0.0365),  glm::vec2(0.161, 0.107), glm::vec3(0,0,1)),
+		Vertex(glm::vec3(-0.346, -0.723, 0.0365),  glm::vec2(0.161, 0.615), glm::vec3(0,0,1)),
+		Vertex(glm::vec3(0.346, -0.723, 0.0365),  glm::vec2(0.41, 0.615), glm::vec3(0,0,1)),
 		//belakang
 		Vertex(glm::vec3(0.346, 0.723, -0.0365), glm::vec2(0.836, 0.107), glm::vec3(0,0,-1)),
 		Vertex(glm::vec3(-0.346, 0.723, -0.0365),  glm::vec2(0.617, 0.107), glm::vec3(0,0,-1)),
 		Vertex(glm::vec3(-0.346, -0.723, -0.0365),  glm::vec2(0.617, 0.615), glm::vec3(0,0,-1)),
 		Vertex(glm::vec3(0.346, -0.723, -0.0365),  glm::vec2(0.836, 0.615), glm::vec3(0,0,-1)),
 		//atas
-		Vertex(glm::vec3(0.346, 0.723, 0.0365), glm::vec2(0.672, 0.031), glm::vec3(0,1,0)),
+		Vertex(glm::vec3(0.346, 0.723, 0.0365), glm::vec2(0.672, 0.066), glm::vec3(0,1,0)),
 		Vertex(glm::vec3(-0.346, 0.723, 0.0365),  glm::vec2(0.283, 0.066), glm::vec3(0,1,0)),
-		Vertex(glm::vec3(-0.346, 0.723, -0.0365),  glm::vec2(0.283, 0.066), glm::vec3(0,1,0)),
+		Vertex(glm::vec3(-0.346, 0.723, -0.0365),  glm::vec2(0.283, 0.031), glm::vec3(0,1,0)),
 		Vertex(glm::vec3(0.346, 0.723, -0.0365), glm::vec2(0.672, 0.031), glm::vec3(0,1,0)),
 		//bawah
 		Vertex(glm::vec3(-0.346, -0.723, 0.0365),  glm::vec2(0.283, 0.791), glm::vec3(0,-1,0)),
@@ -78,8 +78,8 @@ int main(int argc, char** argv) {
 		float cosCounter = cosf(counter);
 
 		//transform.GetPos().x = sinCounter;
-		//transform.GetPos().z = cosCounter;
-		//transform.GetRot().x = counter;
+		transform.GetPos().z = cosCounter;
+		transform.GetRot().x = counter*2;
 		transform.GetRot().y = counter;
 		//transform.GetRot().z = counter;
 		//transform.SetScale(glm::vec3(cosCounter, cosCounter, cosCounter));
@@ -90,7 +90,7 @@ int main(int argc, char** argv) {
 		mesh.Draw();
 
 		display.Update();
-		counter += 0.001f;
+		counter += 0.0005f;
 	}
 	return 0;
 }
